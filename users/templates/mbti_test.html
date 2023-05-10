@@ -1,0 +1,25 @@
+{% extends 'mbti_result.html' %}
+
+{% block content %}
+  <h2>MBTI 검사</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="{{ form.Q1.id }}">{{ form.Q1.label }}</label>
+      {{ form.Q1 }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.Q2.id }}">{{ form.Q2.label }}</label>
+      {{ form.Q2 }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.Q3.id }}">{{ form.Q3.label }}</label>
+      {{ form.Q3 }}
+    </div>
+    <div class="form-group">
+      <label for="{{ form.Q4.id }}">{{ form.Q4.label }}</label>
+      {{ form.Q4 }}
+    </div>
+    <input type="submit" value="결과 보기" class="btn btn-primary">
+  </form>
+{% endblock content %}
